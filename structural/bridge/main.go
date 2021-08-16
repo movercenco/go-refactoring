@@ -10,7 +10,7 @@ type red struct {
 	color string
 }
 
-func (r red) Color() string {
+func (r *red) Color() string {
 	return r.color
 }
 
@@ -26,7 +26,7 @@ func NewBlue() *blue {
 	return &blue{color: "blue"}
 }
 
-func (r blue) Color() string {
+func (r *blue) Color() string {
 	return r.color
 }
 

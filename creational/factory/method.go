@@ -43,7 +43,7 @@ func newSickAbsenceRequest(user string) AbsenceRequest {
 	}
 }
 
-func newRequest(user string, requestType AbsenceRequestType) (AbsenceRequest, error) {
+func newAbsenceRequest(user string, requestType AbsenceRequestType) (AbsenceRequest, error) {
 	if requestType == Vacation {
 		return newVacationAbsenceRequest(user), nil
 	}
@@ -55,9 +55,9 @@ func newRequest(user string, requestType AbsenceRequestType) (AbsenceRequest, er
 }
 
 func main() {
-	v, _ := newRequest("Marin", Vacation)
+	v, _ := newAbsenceRequest("Marin", Vacation)
 	v.Notify()
 
-	s, _ := newRequest("Cris", Sick)
+	s, _ := newAbsenceRequest("Cris", Sick)
 	s.Notify()
 }
